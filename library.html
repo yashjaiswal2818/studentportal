@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Library | Pillai University</title>
+    <link rel="stylesheet" href="css/design-system.css?v=1.0">
+    <link rel="stylesheet" href="css/layout.css?v=1.0">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="js/auth.js"></script>
+</head>
+
+<body>
+    <div class="sidebar-overlay"></div>
+    <div class="app-layout">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="sidebar-brand">
+                <div class="sidebar-brand-logo">P</div>
+                <div class="sidebar-brand-text">
+                    <div class="sidebar-brand-name">Pillai University</div>
+                    <div class="sidebar-brand-tagline">Innovate. Excel. Lead.</div>
+                </div>
+            </div>
+            <nav class="sidebar-nav">
+                <div class="nav-section">
+                    <div class="nav-section-title">Main</div>
+                    <div class="nav-items">
+                        <a href="dashboard.html" class="nav-item"><i data-lucide="layout-dashboard"
+                                class="nav-item-icon"></i><span class="nav-item-text">Dashboard</span></a>
+                        <a href="academics.html" class="nav-item"><i data-lucide="graduation-cap"
+                                class="nav-item-icon"></i><span class="nav-item-text">Academics</span></a>
+                        <a href="attendance.html" class="nav-item"><i data-lucide="calendar-check"
+                                class="nav-item-icon"></i><span class="nav-item-text">Attendance</span></a>
+                    </div>
+                </div>
+                <div class="nav-section">
+                    <div class="nav-section-title">Financials</div>
+                    <div class="nav-items">
+                        <a href="fees.html" class="nav-item"><i data-lucide="credit-card"
+                                class="nav-item-icon"></i><span class="nav-item-text">Fees</span></a>
+                        <a href="library.html" class="nav-item active"><i data-lucide="book-open"
+                                class="nav-item-icon"></i><span class="nav-item-text">Library</span></a>
+                    </div>
+                </div>
+                <div class="nav-section">
+                    <div class="nav-section-title">Campus</div>
+                    <div class="nav-items">
+                        <a href="placements.html" class="nav-item"><i data-lucide="briefcase"
+                                class="nav-item-icon"></i><span class="nav-item-text">Placements</span><span
+                                class="nav-item-badge">4</span></a>
+                        <a href="events.html" class="nav-item"><i data-lucide="calendar" class="nav-item-icon"></i><span
+                                class="nav-item-text">Events</span></a>
+                        <a href="grievance.html" class="nav-item"><i data-lucide="message-square"
+                                class="nav-item-icon"></i><span class="nav-item-text">Grievance</span></a>
+                    </div>
+                </div>
+                <div class="nav-section">
+                    <div class="nav-section-title">Personal</div>
+                    <div class="nav-items">
+                        <a href="profile.html" class="nav-item"><i data-lucide="user" class="nav-item-icon"></i><span
+                                class="nav-item-text">Profile</span></a>
+                    </div>
+                </div>
+            </nav>
+            <div class="sidebar-footer">
+                <div class="sidebar-user" onclick="logout()">
+                    <div class="sidebar-user-avatar">AS</div>
+                    <div class="sidebar-user-info">
+                        <div class="sidebar-user-name">Aryan Sharma</div>
+                        <div class="sidebar-user-role">Log Out</div>
+                    </div>
+                    <i data-lucide="log-out" width="16" style="color: var(--text-muted); margin-left: auto;"></i>
+                </div>
+            </div>
+            <button class="sidebar-toggle"><i data-lucide="chevron-left"></i></button>
+        </aside>
+
+        <div class="main-content">
+            <header class="header">
+                <div class="header-left">
+                    <button class="mobile-menu-btn"><i data-lucide="menu"></i></button>
+                    <div class="header-breadcrumb"><span class="breadcrumb-item">Campus</span><span
+                            class="breadcrumb-item"><i data-lucide="chevron-right" width="16"></i></span><span
+                            class="breadcrumb-current">Library</span></div>
+                </div>
+                <div class="header-right">
+                    <button class="theme-toggle"><i data-lucide="sun"></i></button>
+                </div>
+            </header>
+
+            <main class="page-content">
+                <h1 class="page-title">Digital Library</h1>
+
+                <div class="card" style="margin-top: 20px;">
+                    <h3>Currently Issued</h3>
+                    <div style="display: flex; gap: 20px; margin-top: 15px; overflow-x: auto;">
+                        <div
+                            style="background: var(--background); padding: 15px; border-radius: 8px; border: 1px solid var(--border); min-width: 200px;">
+                            <div
+                                style="height: 120px; background: #333; margin-bottom: 10px; display: flex; align-items: center; justify-content: center; color: white;">
+                                Book Cover</div>
+                            <div style="font-weight: 600;">Data Structures</div>
+                            <div style="font-size: 0.8rem; color: var(--danger);">Due: Tomorrow</div>
+                        </div>
+                        <div
+                            style="background: var(--background); padding: 15px; border-radius: 8px; border: 1px solid var(--border); min-width: 200px;">
+                            <div
+                                style="height: 120px; background: #333; margin-bottom: 10px; display: flex; align-items: center; justify-content: center; color: white;">
+                                Book Cover</div>
+                            <div style="font-weight: 600;">Operating Systems</div>
+                            <div style="font-size: 0.8rem; color: var(--success);">Due: 12 Feb</div>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+    <script src="js/utils.js"></script>
+    <script>lucide.createIcons();</script>
+</body>
+
+</html>

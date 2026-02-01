@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Events | Pillai University</title>
+    <link rel="stylesheet" href="css/design-system.css?v=1.0">
+    <link rel="stylesheet" href="css/layout.css?v=1.0">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="js/auth.js"></script>
+</head>
+
+<body>
+    <div class="sidebar-overlay"></div>
+    <div class="app-layout">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="sidebar-brand">
+                <div class="sidebar-brand-logo">P</div>
+                <div class="sidebar-brand-text">
+                    <div class="sidebar-brand-name">Pillai University</div>
+                    <div class="sidebar-brand-tagline">Innovate. Excel. Lead.</div>
+                </div>
+            </div>
+            <nav class="sidebar-nav">
+                <div class="nav-section">
+                    <div class="nav-section-title">Main</div>
+                    <div class="nav-items">
+                        <a href="dashboard.html" class="nav-item"><i data-lucide="layout-dashboard"
+                                class="nav-item-icon"></i><span class="nav-item-text">Dashboard</span></a>
+                        <a href="academics.html" class="nav-item"><i data-lucide="graduation-cap"
+                                class="nav-item-icon"></i><span class="nav-item-text">Academics</span></a>
+                        <a href="attendance.html" class="nav-item"><i data-lucide="calendar-check"
+                                class="nav-item-icon"></i><span class="nav-item-text">Attendance</span></a>
+                    </div>
+                </div>
+                <div class="nav-section">
+                    <div class="nav-section-title">Financials</div>
+                    <div class="nav-items">
+                        <a href="fees.html" class="nav-item"><i data-lucide="credit-card"
+                                class="nav-item-icon"></i><span class="nav-item-text">Fees</span></a>
+                        <a href="library.html" class="nav-item"><i data-lucide="book-open"
+                                class="nav-item-icon"></i><span class="nav-item-text">Library</span></a>
+                    </div>
+                </div>
+                <div class="nav-section">
+                    <div class="nav-section-title">Campus</div>
+                    <div class="nav-items">
+                        <a href="placements.html" class="nav-item"><i data-lucide="briefcase"
+                                class="nav-item-icon"></i><span class="nav-item-text">Placements</span><span
+                                class="nav-item-badge">4</span></a>
+                        <a href="events.html" class="nav-item active"><i data-lucide="calendar"
+                                class="nav-item-icon"></i><span class="nav-item-text">Events</span></a>
+                        <a href="grievance.html" class="nav-item"><i data-lucide="message-square"
+                                class="nav-item-icon"></i><span class="nav-item-text">Grievance</span></a>
+                    </div>
+                </div>
+                <div class="nav-section">
+                    <div class="nav-section-title">Personal</div>
+                    <div class="nav-items">
+                        <a href="profile.html" class="nav-item"><i data-lucide="user" class="nav-item-icon"></i><span
+                                class="nav-item-text">Profile</span></a>
+                    </div>
+                </div>
+            </nav>
+            <div class="sidebar-footer">
+                <div class="sidebar-user" onclick="logout()">
+                    <div class="sidebar-user-avatar">AS</div>
+                    <div class="sidebar-user-info">
+                        <div class="sidebar-user-name">Aryan Sharma</div>
+                        <div class="sidebar-user-role">Log Out</div>
+                    </div>
+                    <i data-lucide="log-out" width="16" style="color: var(--text-muted); margin-left: auto;"></i>
+                </div>
+            </div>
+            <button class="sidebar-toggle"><i data-lucide="chevron-left"></i></button>
+        </aside>
+
+        <div class="main-content">
+            <header class="header">
+                <div class="header-left">
+                    <button class="mobile-menu-btn"><i data-lucide="menu"></i></button>
+                    <div class="header-breadcrumb"><span class="breadcrumb-item">Campus</span><span
+                            class="breadcrumb-item"><i data-lucide="chevron-right" width="16"></i></span><span
+                            class="breadcrumb-current">Events</span></div>
+                </div>
+                <div class="header-right">
+                    <button class="theme-toggle"><i data-lucide="sun"></i></button>
+                </div>
+            </header>
+
+            <main class="page-content">
+                <h1 class="page-title">Campus Events</h1>
+                <div class="card" style="margin-top: 20px;">
+                    <h3>Upcoming Events</h3>
+                    <ul style="list-style: none; padding: 0; margin-top: 15px;">
+                        <li style="padding: 15px; border-bottom: 1px solid var(--border);">
+                            <div style="font-weight: 600;">Alegría '26</div>
+                            <div style="color: var(--text-muted); font-size: 0.9rem;">Feb 15 - Feb 18 • Main Campus
+                            </div>
+                        </li>
+                        <li style="padding: 15px;">
+                            <div style="font-weight: 600;">Hackathon 4.0</div>
+                            <div style="color: var(--text-muted); font-size: 0.9rem;">March 10 • Lab 5</div>
+                        </li>
+                    </ul>
+                </div>
+            </main>
+        </div>
+    </div>
+    <script src="js/utils.js"></script>
+    <script>lucide.createIcons();</script>
+</body>
+
+</html>
