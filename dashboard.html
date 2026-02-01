@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta name="description" content="Pillai University Student Portal - Innovate. Excel. Lead.">
+  <title>Dashboard | Pillai University Student Portal</title>
+
+  <!-- Favicon -->
+  <link rel="icon"
+    href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎓</text></svg>">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&family=JetBrains+Mono:wght@400;500;600;700&display=swap"
+    rel="stylesheet">
+
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <!-- Chart.js -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="css/design-system.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/dashboard.css">
+  <script src="js/auth.js"></script>
+</head>
+
+<body>
+
+  <!-- Sidebar Overlay for Mobile -->
+  <div class="sidebar-overlay"></div>
+
+  <!-- Main App Layout -->
+  <div class="app-layout">
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <!-- Brand -->
+      <div class="sidebar-brand">
+        <div class="sidebar-brand-logo">P</div>
+        <div class="sidebar-brand-text">
+          <div class="sidebar-brand-name">Pillai University</div>
+          <div class="sidebar-brand-tagline">Innovate. Excel. Lead.</div>
+        </div>
+      </div>
+
+      <!-- Navigation -->
+      <nav class="sidebar-nav">
+        <!-- Main -->
+        <div class="nav-section">
+          <div class="nav-section-title">Main</div>
+          <div class="nav-items">
+            <a href="dashboard.html" class="nav-item active">
+              <i data-lucide="layout-dashboard" class="nav-item-icon"></i>
+              <span class="nav-item-text">Dashboard</span>
+            </a>
+            <a href="academics.html" class="nav-item">
+              <i data-lucide="graduation-cap" class="nav-item-icon"></i>
+              <span class="nav-item-text">Academics</span>
+            </a>
+            <a href="attendance.html" class="nav-item">
+              <i data-lucide="calendar-check" class="nav-item-icon"></i>
+              <span class="nav-item-text">Attendance</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Financials -->
+        <div class="nav-section">
+          <div class="nav-section-title">Financials</div>
+          <div class="nav-items">
+            <a href="fees.html" class="nav-item">
+              <i data-lucide="credit-card" class="nav-item-icon"></i>
+              <span class="nav-item-text">Fees</span>
+            </a>
+            <a href="library.html" class="nav-item">
+              <i data-lucide="book-open" class="nav-item-icon"></i>
+              <span class="nav-item-text">Library</span>
+              <span class="nav-item-badge">2</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Campus -->
+        <div class="nav-section">
+          <div class="nav-section-title">Campus</div>
+          <div class="nav-items">
+            <a href="placements.html" class="nav-item">
+              <i data-lucide="briefcase" class="nav-item-icon"></i>
+              <span class="nav-item-text">Placements</span>
+              <span class="nav-item-badge">4</span>
+            </a>
+            <a href="events.html" class="nav-item">
+              <i data-lucide="calendar" class="nav-item-icon"></i>
+              <span class="nav-item-text">Events</span>
+            </a>
+            <a href="grievance.html" class="nav-item">
+              <i data-lucide="message-square" class="nav-item-icon"></i>
+              <span class="nav-item-text">Grievance</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Personal -->
+        <div class="nav-section">
+          <div class="nav-section-title">Personal</div>
+          <div class="nav-items">
+            <a href="profile.html" class="nav-item">
+              <i data-lucide="user" class="nav-item-icon"></i>
+              <span class="nav-item-text">Profile</span>
+            </a>
+          </div>
+        </div>
+      </nav>
+
+      <!-- Sidebar Footer -->
+      <div class="sidebar-footer">
+        <div class="sidebar-user" onclick="logout()" title="Click to logout">
+          <div class="sidebar-user-avatar">AS</div>
+          <div class="sidebar-user-info">
+            <div class="sidebar-user-name">Aryan Sharma</div>
+            <div class="sidebar-user-role">Log Out</div>
+          </div>
+          <i data-lucide="log-out" width="16" style="color: var(--text-muted);"></i>
+        </div>
+      </div>
+
+      <!-- Toggle Button -->
+      <button class="sidebar-toggle" aria-label="Toggle Sidebar">
+        <i data-lucide="chevron-left" width="16" height="16"></i>
+      </button>
+    </aside>
+
+    <!-- Main Content -->
+    <div class="main-content">
+
+      <!-- Header -->
+      <header class="header">
+        <div class="header-left">
+          <button class="mobile-menu-btn" aria-label="Open Menu">
+            <i data-lucide="menu" width="24" height="24"></i>
+          </button>
+          <div class="header-breadcrumb">
+            <span class="breadcrumb-item">
+              <i data-lucide="home" class="breadcrumb-separator" width="16" height="16"></i>
+            </span>
+            <span class="breadcrumb-item">
+              <i data-lucide="chevron-right" class="breadcrumb-separator" width="16" height="16"></i>
+            </span>
+            <span class="breadcrumb-current">Dashboard</span>
+          </div>
+        </div>
+
+        <div class="header-right">
+          <div class="header-search">
+            <i data-lucide="search" class="search-icon"></i>
+            <input type="text" class="search-input" placeholder="Search anything..." aria-label="Search">
+            <span class="search-shortcut">⌘K</span>
+          </div>
+
+          <div class="header-actions">
+            <button class="header-action-btn" aria-label="Notifications">
+              <i data-lucide="bell" width="20" height="20"></i>
+              <span class="action-badge"></span>
+            </button>
+
+            <button class="theme-toggle" aria-label="Toggle Theme">
+              <i data-lucide="sun" class="theme-icon-sun" width="20" height="20"></i>
+              <i data-lucide="moon" class="theme-icon-moon" width="20" height="20" style="display:none;"></i>
+            </button>
+          </div>
+        </div>
+      </header>
+
+      <!-- Page Content -->
+      <main class="page-content">
+
+        <!-- Welcome Header -->
+        <div class="page-header">
+          <h1 class="page-title">Welcome back, Aryan! 👋</h1>
+          <p class="page-description">Here's what's happening with your academics today.</p>
+        </div>
+
+        <!-- Upcoming Events Ticker -->
+        <div class="events-ticker">
+          <div class="ticker-icon">
+            <i data-lucide="zap" width="20" height="20"></i>
+          </div>
+          <div class="ticker-content">
+            <div class="ticker-item">
+              <span class="ticker-item-date">Feb 05</span>
+              <span class="ticker-item-text">HR Interview - Cognizant at 2:00 PM</span>
+              <div class="ticker-separator"></div>
+              <span class="ticker-item-date">Feb 08</span>
+              <span class="ticker-item-text">Technical Round - Wipro at 10:00 AM</span>
+              <div class="ticker-separator"></div>
+              <span class="ticker-item-date">Mar 15</span>
+              <span class="ticker-item-text">Mid-Semester Examinations Begin</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Bento Grid - Stats & Key Metrics -->
+        <div class="bento-grid stagger-children">
+
+          <!-- CGPA Card -->
+          <div class="bento-item bento-md stat-card">
+            <div class="stat-header">
+              <div class="stat-icon-wrapper">
+                <i data-lucide="award" width="24" height="24"></i>
+              </div>
+            </div>
+            <div class="stat-info">
+              <div class="stat-label">
+                Cumulative GPA
+                <span class="stat-trend up">
+                  <i data-lucide="trending-up" width="12" height="12"></i>
+                  +0.12
+                </span>
+              </div>
+              <div class="stat-value text-mono" data-animate-number="8.42">8.42</div>
+            </div>
+            <div class="stat-footer">
+              <span class="stat-footer-text">Rank 12 out of 180</span>
+              <a href="academics.html" class="stat-footer-link">
+                View Details
+                <i data-lucide="arrow-right" width="14" height="14"></i>
+              </a>
+            </div>
+          </div>
+
+          <!-- Attendance Card -->
+          <div class="bento-item bento-md stat-card">
+            <div class="stat-header">
+              <div class="stat-icon-wrapper warning">
+                <i data-lucide="calendar-check" width="24" height="24"></i>
+              </div>
+            </div>
+            <div class="stat-info">
+              <div class="stat-label">
+                Overall Attendance
+                <span class="stat-trend up">
+                  <i data-lucide="trending-up" width="12" height="12"></i>
+                  +2%
+                </span>
+              </div>
+              <div class="stat-value text-mono" data-animate-number="78">78<span
+                  style="font-size: var(--text-2xl);">%</span></div>
+            </div>
+            <div class="stat-footer">
+              <span class="stat-footer-text">Attend 8 more classes to reach 75%</span>
+              <a href="attendance.html" class="stat-footer-link">
+                View Details
+                <i data-lucide="arrow-right" width="14" height="14"></i>
+              </a>
+            </div>
+          </div>
+
+          <!-- Semester Progress -->
+          <div class="bento-item bento-md">
+            <div class="card-header">
+              <h3 class="card-title">Semester Progress</h3>
+              <p class="card-description">Semester 6 of 8</p>
+            </div>
+            <div class="progress-ring-container">
+              <div class="progress-ring" data-percentage="75">
+                <svg class="progress-ring-circle" width="160" height="160">
+                  <circle class="progress-ring-bg" cx="80" cy="80" r="70"></circle>
+                  <circle class="progress-ring-fill success" cx="80" cy="80" r="70"></circle>
+                </svg>
+                <div class="progress-ring-value">
+                  <div class="progress-ring-percentage text-mono">75%</div>
+                  <div class="progress-ring-label">Complete</div>
+                </div>
+              </div>
+            </div>
+            <div class="last-updated">
+              <i data-lucide="clock" class="last-updated-icon"></i>
+              <span>Updated <span class="last-updated-time">just now</span></span>
+            </div>
+          </div>
+
+          <!-- Announcements Carousel -->
+          <div class="bento-item bento-lg">
+            <div class="card-header">
+              <h3 class="card-title">Recent Announcements</h3>
+              <p class="card-description">Stay updated with latest news</p>
+            </div>
+            <div class="announcements-carousel">
+              <div class="carousel-track">
+                <div class="announcement-card">
+                  <div class="announcement-header">
+                    <span class="announcement-badge">Academic</span>
+                    <span class="announcement-date">Jan 28, 2026</span>
+                  </div>
+                  <h4 class="announcement-title">Mid-Semester Exam Schedule Released</h4>
+                  <p class="announcement-description">
+                    The mid-semester examination schedule for Semester 6 has been published.
+                    Exams will commence from March 15, 2026. Check the academic calendar for detailed timings.
+                  </p>
+                </div>
+                <div class="announcement-card">
+                  <div class="announcement-header">
+                    <span class="announcement-badge">Placement</span>
+                    <span class="announcement-date">Jan 30, 2026</span>
+                  </div>
+                  <h4 class="announcement-title">Amazon SDE Intern Drive</h4>
+                  <p class="announcement-description">
+                    Amazon is visiting campus for SDE Intern positions. Eligible students with
+                    CGPA ≥ 8.0 and no backlogs can apply before February 20, 2026.
+                  </p>
+                </div>
+                <div class="announcement-card">
+                  <div class="announcement-header">
+                    <span class="announcement-badge">Event</span>
+                    <span class="announcement-date">Jan 20, 2026</span>
+                  </div>
+                  <h4 class="announcement-title">Tech Fest - Innovision 2026</h4>
+                  <p class="announcement-description">
+                    Register now for our annual technical festival! Exciting workshops,
+                    competitions, and prizes await. Last date to register: February 20.
+                  </p>
+                </div>
+              </div>
+              <div class="carousel-controls">
+                <span class="carousel-dot active"></span>
+                <span class="carousel-dot"></span>
+                <span class="carousel-dot"></span>
+              </div>
+            </div>
+          </div>
+
+          <!-- CGPA Trend Chart -->
+          <div class="bento-item bento-lg">
+            <div class="card-header">
+              <h3 class="card-title">Academic Performance</h3>
+              <p class="card-description">SGPA across semesters</p>
+            </div>
+            <div class="chart-container" style="height: 280px;">
+              <canvas id="cgpaChart"></canvas>
+            </div>
+            <div class="last-updated">
+              <i data-lucide="clock" class="last-updated-icon"></i>
+              <span>Updated <span class="last-updated-time">just now</span></span>
+            </div>
+          </div>
+
+          <!-- Quick Actions -->
+          <div class="bento-item bento-full">
+            <div class="card-header">
+              <h3 class="card-title">Quick Actions</h3>
+              <p class="card-description">Frequently used services</p>
+            </div>
+            <div class="quick-actions-grid">
+              <a href="#" class="quick-action-btn">
+                <div class="quick-action-icon">
+                  <i data-lucide="file-text" width="24" height="24"></i>
+                </div>
+                <span class="quick-action-label">Download Hall Ticket</span>
+              </a>
+              <a href="#" class="quick-action-btn">
+                <div class="quick-action-icon">
+                  <i data-lucide="award" width="24" height="24"></i>
+                </div>
+                <span class="quick-action-label">Download Marksheet</span>
+              </a>
+              <a href="#" class="quick-action-btn">
+                <div class="quick-action-icon">
+                  <i data-lucide="file-check" width="24" height="24"></i>
+                </div>
+                <span class="quick-action-label">Bonafide Certificate</span>
+              </a>
+              <a href="#" class="quick-action-btn">
+                <div class="quick-action-icon">
+                  <i data-lucide="receipt" width="24" height="24"></i>
+                </div>
+                <span class="quick-action-label">Fee Receipt</span>
+              </a>
+              <a href="#" class="quick-action-btn">
+                <div class="quick-action-icon">
+                  <i data-lucide="book" width="24" height="24"></i>
+                </div>
+                <span class="quick-action-label">Library Card</span>
+              </a>
+              <a href="#" class="quick-action-btn">
+                <div class="quick-action-icon">
+                  <i data-lucide="user-check" width="24" height="24"></i>
+                </div>
+                <span class="quick-action-label">No Dues Form</span>
+              </a>
+            </div>
+          </div>
+
+          <!-- Recent Activity -->
+          <div class="bento-item bento-md">
+            <div class="card-header">
+              <h3 class="card-title">Recent Activity</h3>
+              <p class="card-description">Your latest actions</p>
+            </div>
+            <div class="activity-list">
+              <div class="activity-item">
+                <div class="activity-icon">
+                  <i data-lucide="check-circle" width="20" height="20"></i>
+                </div>
+                <div class="activity-content">
+                  <div class="activity-title">Attendance marked</div>
+                  <div class="activity-description">Machine Learning - Lecture 37</div>
+                </div>
+                <div class="activity-time">2h ago</div>
+              </div>
+              <div class="activity-item">
+                <div class="activity-icon">
+                  <i data-lucide="briefcase" width="20" height="20"></i>
+                </div>
+                <div class="activity-content">
+                  <div class="activity-title">Application submitted</div>
+                  <div class="activity-description">TCS Digital - System Engineer</div>
+                </div>
+                <div class="activity-time">1d ago</div>
+              </div>
+              <div class="activity-item">
+                <div class="activity-icon">
+                  <i data-lucide="calendar" width="20" height="20"></i>
+                </div>
+                <div class="activity-content">
+                  <div class="activity-title">Mid-sem schedule released</div>
+                  <div class="activity-description">Exams from March 15</div>
+                </div>
+                <div class="activity-time">3d ago</div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </main>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="data/student-data.js"></script>
+  <script src="js/utils.js"></script>
+  <script>
+    // Initialize Lucide icons
+    lucide.createIcons();
+
+    // Initialize CGPA Chart
+    Charts.initCGPAChart('cgpaChart', studentData.academic.semesterGrades);
+
+    // Update last updated time
+    setInterval(() => {
+      const now = new Date();
+      const timeString = now.toLocaleTimeString('en-IN', {
+        hour: '2-digit',
+        minute: '2-digit'
+      });
+      document.querySelectorAll('.last-updated-time').forEach(el => {
+        el.textContent = timeString;
+      });
+    }, 60000);
+  </script>
+</body>
+
+</html>

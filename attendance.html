@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Attendance Tracking - Pillai University Student Portal">
+    <title>Attendance | Pillai University Student Portal</title>
+
+    <!-- Favicon -->
+    <link rel="icon"
+        href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎓</text></svg>">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&family=JetBrains+Mono:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="css/design-system.css">
+    <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="css/dashboard.css">
+    <link rel="stylesheet" href="css/academics.css">
+    <script src="js/auth.js"></script>
+</head>
+
+<body>
+
+    <!-- Sidebar Overlay for Mobile -->
+    <div class="sidebar-overlay"></div>
+
+    <!-- Main App Layout -->
+    <div class="app-layout">
+
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="sidebar-brand">
+                <div class="sidebar-brand-logo">P</div>
+                <div class="sidebar-brand-text">
+                    <div class="sidebar-brand-name">Pillai University</div>
+                    <div class="sidebar-brand-tagline">Innovate. Excel. Lead.</div>
+                </div>
+            </div>
+
+            <nav class="sidebar-nav">
+                <div class="nav-section">
+                    <div class="nav-section-title">Main</div>
+                    <div class="nav-items">
+                        <a href="dashboard.html" class="nav-item">
+                            <i data-lucide="layout-dashboard" class="nav-item-icon"></i>
+                            <span class="nav-item-text">Dashboard</span>
+                        </a>
+                        <a href="academics.html" class="nav-item">
+                            <i data-lucide="graduation-cap" class="nav-item-icon"></i>
+                            <span class="nav-item-text">Academics</span>
+                        </a>
+                        <a href="attendance.html" class="nav-item active">
+                            <i data-lucide="calendar-check" class="nav-item-icon"></i>
+                            <span class="nav-item-text">Attendance</span>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="nav-section">
+                    <div class="nav-section-title">Financials</div>
+                    <div class="nav-items">
+                        <a href="fees.html" class="nav-item">
+                            <i data-lucide="credit-card" class="nav-item-icon"></i>
+                            <span class="nav-item-text">Fees</span>
+                        </a>
+                        <a href="library.html" class="nav-item">
+                            <i data-lucide="book-open" class="nav-item-icon"></i>
+                            <span class="nav-item-text">Library</span>
+                            <span class="nav-item-badge">2</span>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="nav-section">
+                    <div class="nav-section-title">Campus</div>
+                    <div class="nav-items">
+                        <a href="placements.html" class="nav-item">
+                            <i data-lucide="briefcase" class="nav-item-icon"></i>
+                            <span class="nav-item-text">Placements</span>
+                            <span class="nav-item-badge">4</span>
+                        </a>
+                        <a href="events.html" class="nav-item">
+                            <i data-lucide="calendar" class="nav-item-icon"></i>
+                            <span class="nav-item-text">Events</span>
+                        </a>
+                        <a href="grievance.html" class="nav-item">
+                            <i data-lucide="message-square" class="nav-item-icon"></i>
+                            <span class="nav-item-text">Grievance</span>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="nav-section">
+                    <div class="nav-section-title">Personal</div>
+                    <div class="nav-items">
+                        <a href="profile.html" class="nav-item">
+                            <i data-lucide="user" class="nav-item-icon"></i>
+                            <span class="nav-item-text">Profile</span>
+                        </a>
+                    </div>
+                </div>
+            </nav>
+
+            <div class="sidebar-footer">
+                <div class="sidebar-user" onclick="logout()" title="Click to logout">
+                    <div class="sidebar-user-avatar">AS</div>
+                    <div class="sidebar-user-info">
+                        <div class="sidebar-user-name">Aryan Sharma</div>
+                        <div class="sidebar-user-role">Log Out</div>
+                    </div>
+                    <i data-lucide="log-out" width="16" style="color: var(--text-muted); margin-left: auto;"></i>
+                </div>
+            </div>
+
+            <button class="sidebar-toggle" aria-label="Toggle Sidebar">
+                <i data-lucide="chevron-left" width="16" height="16"></i>
+            </button>
+        </aside>
+
+        <!-- Main Content -->
+        <div class="main-content">
+
+            <!-- Header -->
+            <header class="header">
+                <div class="header-left">
+                    <button class="mobile-menu-btn" aria-label="Open Menu">
+                        <i data-lucide="menu" width="24" height="24"></i>
+                    </button>
+                    <div class="header-breadcrumb">
+                        <span class="breadcrumb-item">
+                            <i data-lucide="home" width="16" height="16"></i>
+                        </span>
+                        <span class="breadcrumb-item">
+                            <i data-lucide="chevron-right" class="breadcrumb-separator" width="16" height="16"></i>
+                        </span>
+                        <span class="breadcrumb-current">Attendance</span>
+                    </div>
+                </div>
+
+                <div class="header-right">
+                    <div class="header-search">
+                        <i data-lucide="search" class="search-icon"></i>
+                        <input type="text" class="search-input" placeholder="Search anything..." aria-label="Search">
+                        <span class="search-shortcut">⌘K</span>
+                    </div>
+
+                    <div class="header-actions">
+                        <button class="header-action-btn" aria-label="Notifications">
+                            <i data-lucide="bell" width="20" height="20"></i>
+                            <span class="action-badge"></span>
+                        </button>
+
+                        <button class="theme-toggle" aria-label="Toggle Theme">
+                            <i data-lucide="sun" class="theme-icon-sun" width="20" height="20"></i>
+                            <i data-lucide="moon" class="theme-icon-moon" width="20" height="20"
+                                style="display:none;"></i>
+                        </button>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Page Content -->
+            <main class="page-content">
+
+                <!-- Page Header -->
+                <div class="page-header">
+                    <h1 class="page-title">Attendance Tracker</h1>
+                    <p class="page-description">Monitor your attendance and stay above 75% requirement</p>
+                </div>
+
+                <!-- Overall Attendance Stats -->
+                <div class="bento-grid stagger-children">
+
+                    <!-- Overall Attendance Card -->
+                    <div class="bento-item bento-md">
+                        <div class="card-header">
+                            <h3 class="card-title">Overall Attendance</h3>
+                            <p class="card-description">Current semester average</p>
+                        </div>
+                        <div class="progress-ring-container">
+                            <div class="progress-ring" data-percentage="78">
+                                <svg class="progress-ring-circle" width="160" height="160">
+                                    <circle class="progress-ring-bg" cx="80" cy="80" r="70"></circle>
+                                    <circle class="progress-ring-fill warning" cx="80" cy="80" r="70"></circle>
+                                </svg>
+                                <div class="progress-ring-value">
+                                    <div class="progress-ring-percentage text-mono">78%</div>
+                                    <div class="progress-ring-label">Attendance</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div style="text-align: center; margin-top: var(--space-lg);">
+                            <span class="badge badge-warning">
+                                <i data-lucide="alert-triangle" width="14" height="14"></i>
+                                3% above minimum
+                            </span>
+                        </div>
+                    </div>
+
+                    <!-- Classes Stats -->
+                    <div class="bento-item bento-md stat-card">
+                        <div class="stat-header">
+                            <div class="stat-icon-wrapper success">
+                                <i data-lucide="check-circle" width="24" height="24"></i>
+                            </div>
+                        </div>
+                        <div class="stat-info">
+                            <div class="stat-label">Classes Attended</div>
+                            <div class="stat-value text-mono">192<span
+                                    style="font-size: var(--text-2xl); color: var(--text-muted);">/243</span></div>
+                        </div>
+                        <div class="stat-footer">
+                            <span class="stat-footer-text">Total classes conducted</span>
+                        </div>
+                    </div>
+
+                    <!-- Required Classes -->
+                    <div class="bento-item bento-md stat-card">
+                        <div class="stat-header">
+                            <div class="stat-icon-wrapper warning">
+                                <i data-lucide="target" width="24" height="24"></i>
+                            </div>
+                        </div>
+                        <div class="stat-info">
+                            <div class="stat-label">Required to Reach 75%</div>
+                            <div class="stat-value text-mono" style="color: var(--warning);">8</div>
+                        </div>
+                        <div class="stat-footer">
+                            <span class="stat-footer-text">More classes needed</span>
+                        </div>
+                    </div>
+
+                    <!-- Attendance Chart -->
+                    <div class="bento-item bento-lg">
+                        <div class="card-header">
+                            <h3 class="card-title">Subject-wise Attendance Distribution</h3>
+                            <p class="card-description">Visual breakdown by subject</p>
+                        </div>
+                        <div class="chart-container" style="height: 300px;">
+                            <canvas id="attendanceChart"></canvas>
+                        </div>
+                        <div class="last-updated">
+                            <i data-lucide="clock" class="last-updated-icon"></i>
+                            <span>Updated <span class="last-updated-time">just now</span></span>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Subject-wise Breakdown -->
+                <div class="table-container">
+                    <div class="table-header">
+                        <h3 class="table-title">
+                            <i data-lucide="list" width="20" height="20"></i>
+                            Subject-wise Attendance Breakdown
+                        </h3>
+                    </div>
+                    <div class="table-wrapper">
+                        <table class="data-table">
+                            <thead>
+                                <tr>
+                                    <th>Subject</th>
+                                    <th class="sortable">Attendance %</th>
+                                    <th>Attended</th>
+                                    <th>Total</th>
+                                    <th>Status</th>
+                                    <th>Next Class</th>
+                                    <th>Faculty</th>
+                                </tr>
+                            </thead>
+                            <tbody id="attendanceTableBody">
+                                <!-- Populated by JavaScript -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- Alert for Low Attendance -->
+                <div style="margin-top: var(--space-2xl);">
+                    <div class="card" style="border-left: 4px solid var(--danger);">
+                        <div style="display: flex; gap: var(--space-lg); align-items: flex-start;">
+                            <div
+                                style="width: 48px; height: 48px; background: rgba(239, 68, 68, 0.1); border-radius: var(--radius-lg); display: flex; align-items: center; justify-content: center; color: var(--danger); flex-shrink: 0;">
+                                <i data-lucide="alert-octagon" width="24" height="24"></i>
+                            </div>
+                            <div style="flex: 1;">
+                                <h3
+                                    style="font-size: var(--text-lg); font-weight: var(--font-semibold); color: var(--text-primary); margin-bottom: var(--space-sm);">
+                                    ⚠️ Low Attendance Warning
+                                </h3>
+                                <p style="color: var(--text-secondary); margin-bottom: var(--space-md);">
+                                    You have <strong style="color: var(--danger);">2 subjects</strong> with attendance
+                                    below 75%.
+                                    Attend upcoming classes to avoid detention.
+                                </p>
+                                <div style="display: flex; gap: var(--space-md); flex-wrap: wrap;">
+                                    <span class="badge badge-danger">Distributed Systems: 72%</span>
+                                    <span class="badge badge-danger">Cloud Computing: 65%</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </main>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="data/student-data.js"></script>
+    <script src="js/utils.js"></script>
+    <script>
+        // Initialize Lucide icons
+        lucide.createIcons();
+
+        // Populate attendance table
+        function populateAttendanceTable() {
+            const tbody = document.getElementById('attendanceTableBody');
+            const subjects = studentData.academic.currentSemesterSubjects;
+
+            // Sort by attendance (lowest first to highlight issues)
+            const sortedSubjects = [...subjects].sort((a, b) => a.attendance - b.attendance);
+
+            tbody.innerHTML = sortedSubjects.map(subject => {
+                const attendanceColor = getAttendanceColor(subject.attendance);
+                const statusText = subject.attendance >= 75 ? 'Good' : subject.attendance >= 65 ? 'Warning' : 'Critical';
+                const nextClass = subject.nextClass ? formatDate(subject.nextClass) + ', ' + new Date(subject.nextClass).toLocaleTimeString('en-IN', { hour: '2-digit', minute: '2-digit' }) : 'TBA';
+
+                return `
+          <tr>
+            <td class="cell-subject">${subject.name}</td>
+            <td>
+              <div class="cell-attendance">
+                <div class="attendance-progress">
+                  <div class="progress">
+                    <div class="progress-bar ${attendanceColor}" style="width: ${subject.attendance}%"></div>
+                  </div>
+                </div>
+                <span class="attendance-value" style="color: var(--${attendanceColor})">${subject.attendance}%</span>
+              </div>
+            </td>
+            <td class="text-primary cell-marks">${subject.attendedClasses}</td>
+            <td class="text-muted">${subject.totalClasses}</td>
+            <td>
+              <span class="badge badge-${attendanceColor}">${statusText}</span>
+            </td>
+            <td class="text-muted" style="font-size: var(--text-xs);">${nextClass}</td>
+            <td class="text-muted">${subject.faculty}</td>
+          </tr>
+        `;
+            }).join('');
+        }
+
+        // Initialize Attendance Chart (Doughnut)
+        Charts.initAttendanceChart('attendanceChart', studentData.academic.currentSemesterSubjects);
+
+        // Populate table
+        populateAttendanceTable();
+    </script>
+</body>
+
+</html>

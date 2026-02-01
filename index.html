@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Pillai University Student Portal - Innovate. Excel. Lead.">
+    <title>Pillai University Student Portal</title>
+
+    <!-- Favicon -->
+    <link rel="icon"
+        href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎓</text></svg>">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&display=swap" rel="stylesheet">
+
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: #0A0A0A;
+            color: #FAFAFA;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            overflow: hidden;
+            position: relative;
+        }
+
+        /* Animated Background */
+        .background {
+            position: fixed;
+            inset: 0;
+            z-index: 0;
+            background: radial-gradient(circle at 20% 50%, rgba(220, 38, 38, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(220, 38, 38, 0.05) 0%, transparent 50%);
+            opacity: 0.5;
+        }
+
+        .container {
+            position: relative;
+            z-index: 1;
+            text-align: center;
+            max-width: 600px;
+            padding: 2rem;
+        }
+
+        .logo {
+            width: 120px;
+            height: 120px;
+            margin: 0 auto 2rem;
+            background: linear-gradient(135deg, #DC2626, #991B1B);
+            border-radius: 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            font-weight: 900;
+            color: white;
+            box-shadow: 0 20px 60px rgba(220, 38, 38, 0.3);
+            animation: fadeInScale 0.6s ease-out;
+        }
+
+        h1 {
+            font-size: 3.5rem;
+            font-weight: 900;
+            letter-spacing: -0.02em;
+            margin-bottom: 0.5rem;
+            background: linear-gradient(135deg, #FAFAFA, #A1A1AA);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: fadeInUp 0.6s ease-out 0.1s both;
+        }
+
+        .tagline {
+            font-size: 1.5rem;
+            color: #DC2626;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            animation: fadeInUp 0.6s ease-out 0.2s both;
+        }
+
+        .description {
+            font-size: 1.125rem;
+            color: #A1A1AA;
+            line-height: 1.6;
+            margin-bottom: 3rem;
+            animation: fadeInUp 0.6s ease-out 0.3s both;
+        }
+
+        .cta-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 1rem 2rem;
+            background: #DC2626;
+            color: white;
+            text-decoration: none;
+            border-radius: 0.75rem;
+            font-size: 1.125rem;
+            font-weight: 600;
+            transition: all 0.2s ease;
+            box-shadow: 0 10px 30px rgba(220, 38, 38, 0.3);
+            animation: fadeInUp 0.6s ease-out 0.4s both;
+        }
+
+        .cta-button:hover {
+            background: #991B1B;
+            transform: translateY(-2px);
+            box-shadow: 0 15px 40px rgba(220, 38, 38, 0.4);
+        }
+
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 1.5rem;
+            margin-top: 4rem;
+            animation: fadeInUp 0.6s ease-out 0.5s both;
+        }
+
+        .feature {
+            padding: 1.5rem;
+            background: rgba(23, 23, 23, 0.7);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 1rem;
+            transition: all 0.2s ease;
+        }
+
+        .feature:hover {
+            background: rgba(23, 23, 23, 0.9);
+            transform: translateY(-4px);
+            border-color: rgba(220, 38, 38, 0.3);
+        }
+
+        .feature-icon {
+            width: 48px;
+            height: 48px;
+            margin: 0 auto 1rem;
+            background: rgba(220, 38, 38, 0.1);
+            border-radius: 0.75rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #DC2626;
+        }
+
+        .feature-title {
+            font-size: 0.875rem;
+            font-weight: 600;
+            color: #FAFAFA;
+            margin-bottom: 0.25rem;
+        }
+
+        .feature-desc {
+            font-size: 0.75rem;
+            color: #71717A;
+        }
+
+        @keyframes fadeInScale {
+            from {
+                opacity: 0;
+                transform: scale(0.8);
+            }
+
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.5rem;
+            }
+
+            .tagline {
+                font-size: 1.25rem;
+            }
+
+            .description {
+                font-size: 1rem;
+            }
+
+            .features {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="background"></div>
+
+    <div class="container">
+        <div class="logo">P</div>
+
+        <h1>Pillai University</h1>
+        <p class="tagline">Innovate. Excel. Lead.</p>
+
+        <p class="description">
+            Your premium student portal for managing academics, attendance, placements,
+            and campus life - all in one beautiful interface.
+        </p>
+
+        <a href="login.html" class="cta-button">
+            <span>Enter Portal</span>
+            <i data-lucide="arrow-right" width="20" height="20"></i>
+        </a>
+
+        <div class="features">
+            <div class="feature">
+                <div class="feature-icon">
+                    <i data-lucide="graduation-cap" width="24" height="24"></i>
+                </div>
+                <div class="feature-title">Academics</div>
+                <div class="feature-desc">Track CGPA & grades</div>
+            </div>
+
+            <div class="feature">
+                <div class="feature-icon">
+                    <i data-lucide="calendar-check" width="24" height="24"></i>
+                </div>
+                <div class="feature-title">Attendance</div>
+                <div class="feature-desc">Real-time tracking</div>
+            </div>
+
+            <div class="feature">
+                <div class="feature-icon">
+                    <i data-lucide="briefcase" width="24" height="24"></i>
+                </div>
+                <div class="feature-title">Placements</div>
+                <div class="feature-desc">Drive updates</div>
+            </div>
+
+            <div class="feature">
+                <div class="feature-icon">
+                    <i data-lucide="book-open" width="24" height="24"></i>
+                </div>
+                <div class="feature-title">Library</div>
+                <div class="feature-desc">Book management</div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        lucide.createIcons();
+
+        // Auto-redirect after 3 seconds (optional)
+        // setTimeout(() => {
+        //   window.location.href = 'dashboard.html';
+        // }, 3000);
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+
+<head>
+    <meta charset="UTF-">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Academic Performance - Pillai University Student Portal">
+    <title>Academics | Pillai University Student Portal</title>
+
+    <!-- Favicon -->
+    <link rel="icon"
+        href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎓</text></svg>">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&family=JetBrains+Mono:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="css/design-system.css">
+    <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="css/dashboard.css">
+    <link rel="stylesheet" href="css/academics.css">
+    <script src="js/auth.js"></script>
+</head>
+
+<body>
+
+    <!-- Sidebar Overlay for Mobile -->
+    <div class="sidebar-overlay"></div>
+
+    <!-- Main App Layout -->
+    <div class="app-layout">
+
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="sidebar-brand">
+                <div class="sidebar-brand-logo">P</div>
+                <div class="sidebar-brand-text">
+                    <div class="sidebar-brand-name">Pillai University</div>
+                    <div class="sidebar-brand-tagline">Innovate. Excel. Lead.</div>
+                </div>
+            </div>
+
+            <nav class="sidebar-nav">
+                <div class="nav-section">
+                    <div class="nav-section-title">Main</div>
+                    <div class="nav-items">
+                        <a href="dashboard.html" class="nav-item">
+                            <i data-lucide="layout-dashboard" class="nav-item-icon"></i>
+                            <span class="nav-item-text">Dashboard</span>
+                        </a>
+                        <a href="academics.html" class="nav-item active">
+                            <i data-lucide="graduation-cap" class="nav-item-icon"></i>
+                            <span class="nav-item-text">Academics</span>
+                        </a>
+                        <a href="attendance.html" class="nav-item">
+                            <i data-lucide="calendar-check" class="nav-item-icon"></i>
+                            <span class="nav-item-text">Attendance</span>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="nav-section">
+                    <div class="nav-section-title">Financials</div>
+                    <div class="nav-items">
+                        <a href="fees.html" class="nav-item">
+                            <i data-lucide="credit-card" class="nav-item-icon"></i>
+                            <span class="nav-item-text">Fees</span>
+                        </a>
+                        <a href="library.html" class="nav-item">
+                            <i data-lucide="book-open" class="nav-item-icon"></i>
+                            <span class="nav-item-text">Library</span>
+                            <span class="nav-item-badge">2</span>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="nav-section">
+                    <div class="nav-section-title">Campus</div>
+                    <div class="nav-items">
+                        <a href="placements.html" class="nav-item">
+                            <i data-lucide="briefcase" class="nav-item-icon"></i>
+                            <span class="nav-item-text">Placements</span>
+                            <span class="nav-item-badge">4</span>
+                        </a>
+                        <a href="events.html" class="nav-item">
+                            <i data-lucide="calendar" class="nav-item-icon"></i>
+                            <span class="nav-item-text">Events</span>
+                        </a>
+                        <a href="grievance.html" class="nav-item">
+                            <i data-lucide="message-square" class="nav-item-icon"></i>
+                            <span class="nav-item-text">Grievance</span>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="nav-section">
+                    <div class="nav-section-title">Personal</div>
+                    <div class="nav-items">
+                        <a href="profile.html" class="nav-item">
+                            <i data-lucide="user" class="nav-item-icon"></i>
+                            <span class="nav-item-text">Profile</span>
+                        </a>
+                    </div>
+                </div>
+            </nav>
+
+            <div class="sidebar-footer">
+                <div class="sidebar-user" onclick="logout()" title="Click to logout">
+                    <div class="sidebar-user-avatar">AS</div>
+                    <div class="sidebar-user-info">
+                        <div class="sidebar-user-name">Aryan Sharma</div>
+                        <div class="sidebar-user-role">Log Out</div>
+                    </div>
+                    <i data-lucide="log-out" width="16" style="color: var(--text-muted); margin-left: auto;"></i>
+                </div>
+            </div>
+
+            <button class="sidebar-toggle" aria-label="Toggle Sidebar">
+                <i data-lucide="chevron-left" width="16" height="16"></i>
+            </button>
+        </aside>
+
+        <!-- Main Content -->
+        <div class="main-content">
+
+            <!-- Header -->
+            <header class="header">
+                <div class="header-left">
+                    <button class="mobile-menu-btn" aria-label="Open Menu">
+                        <i data-lucide="menu" width="24" height="24"></i>
+                    </button>
+                    <div class="header-breadcrumb">
+                        <span class="breadcrumb-item">
+                            <i data-lucide="home" width="16" height="16"></i>
+                        </span>
+                        <span class="breadcrumb-item">
+                            <i data-lucide="chevron-right" class="breadcrumb-separator" width="16" height="16"></i>
+                        </span>
+                        <span class="breadcrumb-current">Academics</span>
+                    </div>
+                </div>
+
+                <div class="header-right">
+                    <div class="header-search">
+                        <i data-lucide="search" class="search-icon"></i>
+                        <input type="text" class="search-input" placeholder="Search anything..." aria-label="Search">
+                        <span class="search-shortcut">⌘K</span>
+                    </div>
+
+                    <div class="header-actions">
+                        <button class="header-action-btn" aria-label="Notifications">
+                            <i data-lucide="bell" width="20" height="20"></i>
+                            <span class="action-badge"></span>
+                        </button>
+
+                        <button class="theme-toggle" aria-label="Toggle Theme">
+                            <i data-lucide="sun" class="theme-icon-sun" width="20" height="20"></i>
+                            <i data-lucide="moon" class="theme-icon-moon" width="20" height="20"
+                                style="display:none;"></i>
+                        </button>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Page Content -->
+            <main class="page-content">
+
+                <!-- Page Header -->
+                <div class="page-header">
+                    <h1 class="page-title">Academic Performance</h1>
+                    <p class="page-description">Track your grades, CGPA, and semester-wise performance</p>
+                </div>
+
+                <!-- Semester Selector -->
+                <div class="semester-selector">
+                    <label for="semesterSelect" class="semester-selector-label">
+                        <i data-lucide="layers" width="18" height="18"></i>
+                        Select Semester:
+                    </label>
+                    <div class="semester-dropdown">
+                        <select id="semesterSelect" class="semester-select">
+                            <option value="current">Current Semester (6)</option>
+                            <option value="1">Semester 1</option>
+                            <option value="2">Semester 2</option>
+                            <option value="3">Semester 3</option>
+                            <option value="4">Semester 4</option>
+                            <option value="5">Semester 5</option>
+                            <option value="6" selected>Semester 6</option>
+                            <option value="7">Semester 7 (Upcoming)</option>
+                            <option value="8">Semester 8 (Upcoming)</option>
+                            <option value="all">All Semesters</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- Grade Summary Cards -->
+                <div class="grade-summary stagger-children">
+                    <div class="grade-card">
+                        <div class="grade-card-icon">
+                            <i data-lucide="award" width="28" height="28"></i>
+                        </div>
+                        <div class="grade-card-label">Cumulative GPA</div>
+                        <div class="grade-card-value" data-animate-number="8.42">8.42</div>
+                    </div>
+
+                    <div class="grade-card">
+                        <div class="grade-card-icon">
+                            <i data-lucide="trending-up" width="28" height="28"></i>
+                        </div>
+                        <div class="grade-card-label">Current SGPA</div>
+                        <div class="grade-card-value" data-animate-number="8.15">8.15</div>
+                    </div>
+
+                    <div class="grade-card">
+                        <div class="grade-card-icon">
+                            <i data-lucide="target" width="28" height="28"></i>
+                        </div>
+                        <div class="grade-card-label">Credits Earned</div>
+                        <div class="grade-card-value">130<span
+                                style="font-size: var(--text-lg); color: var(--text-muted);">/138</span></div>
+                    </div>
+
+                    <div class="grade-card">
+                        <div class="grade-card-icon">
+                            <i data-lucide="trophy" width="28" height="28"></i>
+                        </div>
+                        <div class="grade-card-label">Class Rank</div>
+                        <div class="grade-card-value">12<span
+                                style="font-size: var(--text-lg); color: var(--text-muted);">/180</span></div>
+                    </div>
+
+                    <div class="grade-card">
+                        <div class="grade-card-icon">
+                            <i data-lucide="alert-triangle" width="28" height="28"></i>
+                        </div>
+                        <div class="grade-card-label">Backlogs</div>
+                        <div class="grade-card-value" style="color: var(--danger);">1</div>
+                    </div>
+                </div>
+
+                <!-- CGPA Trend Chart -->
+                <div class="bento-grid">
+                    <div class="bento-item bento-full">
+                        <div class="card-header">
+                            <h3 class="card-title">CGPA Trend Across Semesters</h3>
+                            <p class="card-description">Your academic journey visualization</p>
+                        </div>
+                        <div class="chart-container" style="height: 320px;">
+                            <canvas id="cgpaTrendChart"></canvas>
+                        </div>
+                        <div class="last-updated">
+                            <i data-lucide="clock" class="last-updated-icon"></i>
+                            <span>Updated <span class="last-updated-time">just now</span></span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Subject-wise Breakdown Table -->
+                <div class="table-container">
+                    <div class="table-header">
+                        <h3 class="table-title">
+                            <i data-lucide="book-open" width="20" height="20"></i>
+                            Semester 6 - Subject-wise Performance
+                        </h3>
+                    </div>
+                    <div class="table-wrapper">
+                        <table class="data-table">
+                            <thead>
+                                <tr>
+                                    <th class="sortable">Code</th>
+                                    <th class="sortable">Subject Name</th>
+                                    <th class="sortable">Attendance</th>
+                                    <th class="sortable">Internal</th>
+                                    <th>External</th>
+                                    <th class="sortable">Total</th>
+                                    <th>Credits</th>
+                                    <th>Faculty</th>
+                                </tr>
+                            </thead>
+                            <tbody id="subjectsTableBody">
+                                <!-- Will be populated by JavaScript -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- Backlogs Section -->
+                <div style="margin-top: var(--space-2xl);" id="backlogsSection">
+                    <div class="card-header" style="margin-bottom: var(--space-lg);">
+                        <h3 class="card-title" style="color: var(--danger);">
+                            <i data-lucide="alert-circle" width="20" height="20"></i>
+                            Active Backlogs (1)
+                        </h3>
+                        <p class="card-description">Subjects requiring re-examination</p>
+                    </div>
+
+                    <div class="backlog-list">
+                        <div class="backlog-card">
+                            <div class="backlog-icon">
+                                <i data-lucide="x-circle" width="24" height="24"></i>
+                            </div>
+                            <div class="backlog-content">
+                                <div class="backlog-header">
+                                    <div>
+                                        <div class="backlog-code">CSE404</div>
+                                        <h4 class="backlog-title">Theory of Computation</h4>
+                                    </div>
+                                    <span class="badge badge-danger">Active</span>
+                                </div>
+                                <div class="backlog-meta">
+                                    <span class="backlog-meta-item">
+                                        <i data-lucide="calendar" width="14" height="14"></i>
+                                        Semester 4
+                                    </span>
+                                    <span class="backlog-meta-item">
+                                        <i data-lucide="refresh-cw" width="14" height="14"></i>
+                                        Attempt 2
+                                    </span>
+                                </div>
+                                <div class="backlog-score">
+                                    <span class="backlog-score-value">38/100</span>
+                                    <span style="color: var(--text-muted); font-size: var(--text-xs);">
+                                        (Passing: 40)
+                                    </span>
+                                </div>
+                                <div class="backlog-actions">
+                                    <button class="backlog-cta">
+                                        <i data-lucide="calendar-plus" width="16" height="16"></i>
+                                        Register for Re-exam (Mar 15, 2026)
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </main>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="data/student-data.js"></script>
+    <script src="js/utils.js"></script>
+    <script>
+        // Initialize Lucide icons
+        lucide.createIcons();
+
+        // Populate subjects table
+        function populateSubjectsTable() {
+            const tbody = document.getElementById('subjectsTableBody');
+            const subjects = studentData.academic.currentSemesterSubjects;
+
+            tbody.innerHTML = subjects.map(subject => {
+                const attendanceColor = getAttendanceColor(subject.attendance);
+                const attendancePercentage = (subject.attendance / 100) * 100;
+
+                return `
+          <tr>
+            <td class="cell-code">${subject.code}</td>
+            <td class="cell-subject">${subject.name}</td>
+            <td>
+              <div class="cell-attendance">
+                <div class="attendance-progress">
+                  <div class="progress">
+                    <div class="progress-bar ${attendanceColor}" style="width: ${subject.attendance}%"></div>
+                  </div>
+                </div>
+                <span class="attendance-value" style="color: var(--${attendanceColor})">${subject.attendance}%</span>
+              </div>
+            </td>
+            <td class="cell-marks text-primary">${subject.internal}<span class="marks-total">/${subject.maxInternal}</span></td>
+            <td class="text-muted">Pending</td>
+            <td class="text-muted">-</td>
+            <td class="text-primary">${subject.credits}</td>
+            <td class="text-muted">${subject.faculty}</td>
+          </tr>
+        `;
+            }).join('');
+        }
+
+        // Initialize CGPA Trend Chart
+        Charts.initCGPAChart('cgpaTrendChart', studentData.academic.semesterGrades);
+
+        // Populate table on load
+        populateSubjectsTable();
+
+        // Semester selector change handler
+        document.getElementById('semesterSelect').addEventListener('change', function (e) {
+            const semester = e.target.value;
+            console.log('Selected semester:', semester);
+            // Here you would load different semester data
+            // For now, we'll just show a notification
+            Notifications.show(`Loading data for ${e.target.options[e.target.selectedIndex].text}...`, 'info');
+        });
+    </script>
+</body>
+
+</html>
