@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>My Profile | Pillai University</title>
+
+    <!-- Favicon -->
+    <link rel="icon"
+        href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎓</text></svg>">
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="css/design-system.css?v=1.0">
+    <link rel="stylesheet" href="css/layout.css?v=1.0">
+    <link rel="stylesheet" href="css/profile.css?v=1.0">
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="js/auth.js"></script>
+</head>
+
+<body>
+
+    <!-- Sidebar Overlay -->
+    <div class="sidebar-overlay"></div>
+
+    <div class="app-layout">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="sidebar-brand">
+                <div class="sidebar-brand-logo">P</div>
+                <div class="sidebar-brand-text">
+                    <div class="sidebar-brand-name">Pillai University</div>
+                    <div class="sidebar-brand-tagline">Innovate. Excel. Lead.</div>
+                </div>
+            </div>
+
+            <nav class="sidebar-nav">
+                <div class="nav-section">
+                    <div class="nav-section-title">Main</div>
+                    <div class="nav-items">
+                        <a href="dashboard.html" class="nav-item">
+                            <i data-lucide="layout-dashboard" class="nav-item-icon"></i>
+                            <span class="nav-item-text">Dashboard</span>
+                        </a>
+                        <a href="academics.html" class="nav-item">
+                            <i data-lucide="graduation-cap" class="nav-item-icon"></i>
+                            <span class="nav-item-text">Academics</span>
+                        </a>
+                        <a href="attendance.html" class="nav-item">
+                            <i data-lucide="calendar-check" class="nav-item-icon"></i>
+                            <span class="nav-item-text">Attendance</span>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="nav-section">
+                    <div class="nav-section-title">Campus</div>
+                    <div class="nav-items">
+                        <a href="placements.html" class="nav-item">
+                            <i data-lucide="briefcase" class="nav-item-icon"></i>
+                            <span class="nav-item-text">Placements</span>
+                            <span class="nav-item-badge">4</span>
+                        </a>
+                        <a href="fees.html" class="nav-item">
+                            <i data-lucide="credit-card" class="nav-item-icon"></i>
+                            <span class="nav-item-text">Fees</span>
+                        </a>
+                        <a href="library.html" class="nav-item">
+                            <i data-lucide="book-open" class="nav-item-icon"></i>
+                            <span class="nav-item-text">Library</span>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="nav-section">
+                    <div class="nav-section-title">Personal</div>
+                    <div class="nav-items">
+                        <a href="profile.html" class="nav-item active">
+                            <i data-lucide="user" class="nav-item-icon"></i>
+                            <span class="nav-item-text">Profile</span>
+                        </a>
+                    </div>
+                </div>
+            </nav>
+
+            <div class="sidebar-footer">
+                <div class="sidebar-user" onclick="logout()" title="Logout">
+                    <div class="sidebar-user-avatar">AS</div>
+                    <div class="sidebar-user-info">
+                        <div class="sidebar-user-name">Aryan Sharma</div>
+                        <div class="sidebar-user-role">Log Out</div>
+                    </div>
+                    <i data-lucide="log-out" width="16" style="color: var(--text-muted); margin-left: auto;"></i>
+                </div>
+            </div>
+
+            <button class="sidebar-toggle"><i data-lucide="chevron-left"></i></button>
+        </aside>
+
+        <!-- Main Content -->
+        <div class="main-content">
+            <header class="header">
+                <div class="header-left">
+                    <button class="mobile-menu-btn"><i data-lucide="menu"></i></button>
+                    <div class="header-breadcrumb">
+                        <span class="breadcrumb-item"><i data-lucide="home" width="16"></i></span>
+                        <span class="breadcrumb-item"><i data-lucide="chevron-right" width="16"></i></span>
+                        <span class="breadcrumb-current">My Profile</span>
+                    </div>
+                </div>
+                <div class="header-right">
+                    <button class="theme-toggle"><i data-lucide="sun"></i></button>
+                </div>
+            </header>
+
+            <main class="page-content">
+                <div class="profile-grid">
+
+                    <!-- Left Column: ID Card & Quick Actions -->
+                    <div class="profile-left">
+
+                        <!-- Digital ID Card -->
+                        <div class="id-card-container">
+                            <div class="digital-id-card">
+                                <div class="id-card-header">
+                                    <div class="id-logo">P</div>
+                                    <div class="id-college-name">PILLAI UNIVERSITY</div>
+                                </div>
+                                <div class="id-card-body">
+                                    <div class="id-photo-wrapper">
+                                        <div class="id-photo-placeholder">AS</div>
+                                    </div>
+                                    <div class="id-details">
+                                        <h2 class="id-name">Aryan Sharma</h2> <!-- Dynamic -->
+                                        <div class="id-role">Student</div>
+                                        <div class="id-dept">Start Up Engineering</div>
+                                    </div>
+                                </div>
+                                <div class="id-card-footer">
+                                    <div class="id-info-row">
+                                        <div class="id-label">PRN</div>
+                                        <div class="id-value">2022PC045</div>
+                                    </div>
+                                    <div class="id-info-row">
+                                        <div class="id-label">Validity</div>
+                                        <div class="id-value">May 2026</div>
+                                    </div>
+                                    <div class="id-barcode"></div>
+                                </div>
+                            </div>
+                            <p class="id-helper-text">This is your official Digital ID</p>
+                        </div>
+
+                        <!-- Quick Actions -->
+                        <div class="profile-card contacts-card">
+                            <h3 class="card-title">Contact Information</h3>
+                            <div class="detail-row">
+                                <i data-lucide="mail" class="detail-icon"></i>
+                                <div>
+                                    <div class="detail-label">Email</div>
+                                    <div class="detail-value">aryan.s@student.pillai.ac.in</div>
+                                </div>
+                            </div>
+                            <div class="detail-row">
+                                <i data-lucide="phone" class="detail-icon"></i>
+                                <div>
+                                    <div class="detail-label">Phone</div>
+                                    <div class="detail-value">+91 98765 43210</div>
+                                </div>
+                            </div>
+                            <div class="detail-row">
+                                <i data-lucide="map-pin" class="detail-icon"></i>
+                                <div>
+                                    <div class="detail-label">Address</div>
+                                    <div class="detail-value">Sector 16, New Panvel</div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <!-- Right Column: Academic & Personal Details -->
+                    <div class="profile-right">
+
+                        <!-- Academic Details -->
+                        <div class="profile-card">
+                            <div class="card-header-flex">
+                                <h3 class="card-title">Academic Details</h3>
+                                <button class="btn-sm btn-outline">Request Change</button>
+                            </div>
+
+                            <div class="details-grid">
+                                <div class="form-group">
+                                    <label>Course</label>
+                                    <input type="text" value="B.Tech Computer Science" readonly>
+                                </div>
+                                <div class="form-group">
+                                    <label>Current Semester</label>
+                                    <input type="text" value="Semester 6" readonly>
+                                </div>
+                                <div class="form-group">
+                                    <label>Division</label>
+                                    <input type="text" value="A" readonly>
+                                </div>
+                                <div class="form-group">
+                                    <label>Roll Number</label>
+                                    <input type="text" value="45" readonly>
+                                </div>
+                                <div class="form-group">
+                                    <label>Admission Year</label>
+                                    <input type="text" value="2024" readonly>
+                                </div>
+                                <div class="form-group">
+                                    <label>Current CGPA</label>
+                                    <input type="text" value="8.42" readonly class="text-success">
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Account Settings -->
+                        <div class="profile-card">
+                            <h3 class="card-title">Account Settings</h3>
+
+                            <div class="settings-list">
+                                <div class="setting-item">
+                                    <div class="setting-info">
+                                        <div class="setting-name">Two-Factor Authentication</div>
+                                        <div class="setting-desc">Add an extra layer of security</div>
+                                    </div>
+                                    <label class="switch">
+                                        <input type="checkbox">
+                                        <span class="slider"></span>
+                                    </label>
+                                </div>
+
+                                <div class="setting-item">
+                                    <div class="setting-info">
+                                        <div class="setting-name">Email Notifications</div>
+                                        <div class="setting-desc">Get updates about results & fees</div>
+                                    </div>
+                                    <label class="switch">
+                                        <input type="checkbox" checked>
+                                        <span class="slider"></span>
+                                    </label>
+                                </div>
+
+                                <div class="setting-actions">
+                                    <button class="btn btn-outline"
+                                        onclick="alert('Change Password feature coming soon!')">Change Password</button>
+                                    <button class="btn btn-danger-outline" onclick="logout()">Log Out of All
+                                        Devices</button>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <script src="js/utils.js"></script>
+    <script>
+        lucide.createIcons();
+
+        // Dynamic Name Injection (Specific for Profile Page ID Card)
+        document.addEventListener('DOMContentLoaded', () => {
+            const name = localStorage.getItem('studentName');
+            if (name) {
+                document.querySelector('.id-name').textContent = name;
+                document.querySelector('.id-photo-placeholder').textContent = name.split(' ').map(n => n[0]).slice(0, 2).join('').toUpperCase();
+            }
+        });
+    </script>
+</body>
+
+</html>
