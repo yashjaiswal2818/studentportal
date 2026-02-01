@@ -476,10 +476,49 @@ const Utils = {
     }
 };
 
+// ============= PROFILE MANAGEMENT =============
+const Profile = {
+    init() {
+        const studentName = localStorage.getItem('studentName');
+        if (studentName) {
+            this.updateName(studentName);
+            this.updateAvatar(studentName);
+        }
+    },
+
+    updateName(name) {
+        // Update Sidebar Name
+        const sidebarName = document.querySelector('.sidebar-user-name');
+        if (sidebarName) sidebarName.textContent = name;
+
+        // Update Welcome Message (Dashboard)
+        const welcomeTitle = document.querySelector('.page-title');
+        if (welcomeTitle && welcomeTitle.textContent.includes('Welcome back')) {
+            // Keep the "Welcome back," and emoji part, just replace the name
+            // Assuming format "Welcome back, Aryan! 👋"
+            const emoji = welcomeTitle.textContent.match(/[\u{1F300}-\u{1F9FF}]/u) || '👋';
+            welcomeTitle.textContent = `Welcome back, ${name.split(' ')[0]}! ${emoji}`;
+        }
+    },
+
+    updateAvatar(name) {
+        const avatar = document.querySelector('.sidebar-user-avatar');
+        if (avatar) {
+            const initials = name.split(' ')
+                .map(word => word[0])
+                .slice(0, 2)
+                .join('')
+                .toUpperCase();
+            avatar.textContent = initials;
+        }
+    }
+};
+
 // ============= INITIALIZE ON PAGE LOAD =============
 document.addEventListener('DOMContentLoaded', () => {
     Theme.init();
     Sidebar.init();
+    Profile.init();
     Animations.init();
     ProgressRing.init();
     Search.init();

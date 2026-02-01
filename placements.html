@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="description" content="Placement Portal - Pillai University">
+    <title>Placements | Pillai University Student Portal</title>
+
+    <!-- Favicon -->
+    <link rel="icon"
+        href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎓</text></svg>">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&family=JetBrains+Mono:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="css/design-system.css">
+    <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="css/placements.css">
+    <script src="js/auth.js"></script>
+</head>
+
+<body>
+
+    <!-- Sidebar Overlay -->
+    <div class="sidebar-overlay"></div>
+
+    <div class="app-layout">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="sidebar-brand">
+                <div class="sidebar-brand-logo">P</div>
+                <div class="sidebar-brand-text">
+                    <div class="sidebar-brand-name">Pillai University</div>
+                    <div class="sidebar-brand-tagline">Innovate. Excel. Lead.</div>
+                </div>
+            </div>
+
+            <nav class="sidebar-nav">
+                <div class="nav-section">
+                    <div class="nav-section-title">Main</div>
+                    <div class="nav-items">
+                        <a href="dashboard.html" class="nav-item">
+                            <i data-lucide="layout-dashboard" class="nav-item-icon"></i>
+                            <span class="nav-item-text">Dashboard</span>
+                        </a>
+                        <a href="academics.html" class="nav-item">
+                            <i data-lucide="graduation-cap" class="nav-item-icon"></i>
+                            <span class="nav-item-text">Academics</span>
+                        </a>
+                        <a href="attendance.html" class="nav-item">
+                            <i data-lucide="calendar-check" class="nav-item-icon"></i>
+                            <span class="nav-item-text">Attendance</span>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="nav-section">
+                    <div class="nav-section-title">Campus</div>
+                    <div class="nav-items">
+                        <a href="placements.html" class="nav-item active">
+                            <i data-lucide="briefcase" class="nav-item-icon"></i>
+                            <span class="nav-item-text">Placements</span>
+                            <span class="nav-item-badge">4</span>
+                        </a>
+                        <a href="fees.html" class="nav-item">
+                            <i data-lucide="credit-card" class="nav-item-icon"></i>
+                            <span class="nav-item-text">Fees</span>
+                        </a>
+                        <a href="library.html" class="nav-item">
+                            <i data-lucide="book-open" class="nav-item-icon"></i>
+                            <span class="nav-item-text">Library</span>
+                        </a>
+                        <a href="events.html" class="nav-item">
+                            <i data-lucide="calendar" class="nav-item-icon"></i>
+                            <span class="nav-item-text">Events</span>
+                        </a>
+                        <a href="grievance.html" class="nav-item">
+                            <i data-lucide="message-square" class="nav-item-icon"></i>
+                            <span class="nav-item-text">Grievance</span>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="nav-section">
+                    <div class="nav-section-title">Personal</div>
+                    <div class="nav-items">
+                        <a href="profile.html" class="nav-item">
+                            <i data-lucide="user" class="nav-item-icon"></i>
+                            <span class="nav-item-text">Profile</span>
+                        </a>
+                    </div>
+                </div>
+            </nav>
+
+            <div class="sidebar-footer">
+                <div class="sidebar-user" onclick="logout()" title="Logout">
+                    <div class="sidebar-user-avatar">AS</div>
+                    <div class="sidebar-user-info">
+                        <div class="sidebar-user-name">Aryan Sharma</div>
+                        <div class="sidebar-user-role">Log Out</div>
+                    </div>
+                    <i data-lucide="log-out" width="16" style="color: var(--text-muted); margin-left: auto;"></i>
+                </div>
+            </div>
+
+            <button class="sidebar-toggle"><i data-lucide="chevron-left"></i></button>
+        </aside>
+
+        <!-- Main Content -->
+        <div class="main-content">
+            <header class="header">
+                <div class="header-left">
+                    <button class="mobile-menu-btn"><i data-lucide="menu"></i></button>
+                    <div class="header-breadcrumb">
+                        <span class="breadcrumb-item"><i data-lucide="home" width="16"></i></span>
+                        <span class="breadcrumb-item"><i data-lucide="chevron-right" width="16"></i></span>
+                        <span class="breadcrumb-current">Placements</span>
+                    </div>
+                </div>
+                <div class="header-right">
+                    <div class="header-actions">
+                        <button class="header-action-btn"><i data-lucide="bell"></i><span
+                                class="action-badge"></span></button>
+                        <button class="theme-toggle"><i data-lucide="sun"></i></button>
+                    </div>
+                </div>
+            </header>
+
+            <main class="page-content">
+                <!-- Hero Section -->
+                <div class="placement-hero">
+                    <div class="hero-content">
+                        <h1 class="page-title">Placement Drive 2026 🚀</h1>
+                        <p class="page-description">Land your dream job. You are currently eligible for
+                            <strong>12</strong> active drives.</p>
+
+                        <div class="placement-stats">
+                            <div class="p-stat">
+                                <div class="p-stat-label">Highest Package</div>
+                                <div class="p-stat-value text-gradient">₹45 LPA</div>
+                            </div>
+                            <div class="p-stat">
+                                <div class="p-stat-label">Average Package</div>
+                                <div class="p-stat-value">₹8.5 LPA</div>
+                            </div>
+                            <div class="p-stat">
+                                <div class="p-stat-label">Companies Visiting</div>
+                                <div class="p-stat-value">120+</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="eligibility-card eligible">
+                        <div class="eligibility-icon"><i data-lucide="check-circle-2"></i></div>
+                        <div class="eligibility-info">
+                            <h3>You are Eligible!</h3>
+                            <p>CGPA: <strong class="text-mono">8.42</strong> • Backlogs: <strong
+                                    class="text-mono">0</strong></p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Filters -->
+                <div class="jobs-filter-bar">
+                    <div class="search-wrapper">
+                        <i data-lucide="search"></i>
+                        <input type="text" placeholder="Search companies, roles..." class="job-search-input">
+                    </div>
+                    <div class="filter-tabs">
+                        <button class="filter-tab active">All Drives</button>
+                        <button class="filter-tab">Recommended</button>
+                        <button class="filter-tab">Applied</button>
+                    </div>
+                </div>
+
+                <!-- Job Grid -->
+                <h2 class="section-title">Active Drives</h2>
+                <div class="job-grid" id="jobGrid">
+                    <!-- Cards injected by JS -->
+                </div>
+
+                <!-- Application Tracker -->
+                <h2 class="section-title" style="margin-top: var(--space-2xl);">Your Applications</h2>
+                <div class="application-tracker">
+                    <div class="tracker-col">
+                        <div class="tracker-header">Applied <span class="count">2</span></div>
+                        <div class="tracker-card">
+                            <div class="tc-company">
+                                <div class="tc-logo" style="background: #000;">A</div>
+                                <div>
+                                    <div class="tc-name">Accenture</div>
+                                    <div class="tc-role">ASE</div>
+                                </div>
+                            </div>
+                            <div class="tc-date">Applied on Jan 28</div>
+                        </div>
+                        <div class="tracker-card">
+                            <div class="tc-company">
+                                <div class="tc-logo" style="background: #0078D4;">M</div>
+                                <div>
+                                    <div class="tc-name">Microsoft</div>
+                                    <div class="tc-role">Intern</div>
+                                </div>
+                            </div>
+                            <div class="tc-date">Applied on Jan 25</div>
+                        </div>
+                    </div>
+
+                    <div class="tracker-col">
+                        <div class="tracker-header">Online Assessment <span class="count">1</span></div>
+                        <div class="tracker-card active-card">
+                            <div class="tc-company">
+                                <div class="tc-logo" style="background: #2196F3;">C</div>
+                                <div>
+                                    <div class="tc-name">Cognizant</div>
+                                    <div class="tc-role">GenC Next</div>
+                                </div>
+                            </div>
+                            <div class="tc-status">Test Scheduled: Feb 05</div>
+                            <button class="btn-sm btn-outline">View Syllabus</button>
+                        </div>
+                    </div>
+
+                    <div class="tracker-col">
+                        <div class="tracker-header">Interview <span class="count">1</span></div>
+                        <div class="tracker-card highlight-card">
+                            <div class="tc-company">
+                                <div class="tc-logo" style="background: #FF9900;">A</div>
+                                <div>
+                                    <div class="tc-name">Amazon</div>
+                                    <div class="tc-role">SDE I</div>
+                                </div>
+                            </div>
+                            <div class="tc-status">HR Round: Feb 08</div>
+                            <button class="btn-sm">View Ticket</button>
+                        </div>
+                    </div>
+                </div>
+
+            </main>
+        </div>
+    </div>
+
+    <!-- Job Details Modal (Hidden) -->
+    <div id="jobModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Job Details</h2>
+                <button class="close-modal"><i data-lucide="x"></i></button>
+            </div>
+            <div class="modal-body" id="jobModalBody"></div>
+            <div class="modal-footer">
+                <button class="btn btn-primary w-full">Apply Now</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="data/student-data.js"></script>
+    <script src="js/utils.js"></script>
+    <script>
+        lucide.createIcons();
+
+        // Sample Job Data (Ideally from student-data.js or API)
+        const jobs = [
+            { id: 1, company: "Google", role: "Software Engineer", package: "₹18-24 LPA", type: "Full Time", logo: "G", color: "#4285F4", deadline: "2 days left", tags: ["Dream", "CSE", "IT"] },
+            { id: 2, company: "Deloitte", role: "Analyst", package: "₹7.6 LPA", type: "Full Time", logo: "D", color: "#000000", deadline: "Apply by Today", tags: ["Super Dream", "All Branches"] },
+            { id: 3, company: "TCS", role: "Ninja / Digital", package: "₹3.36 - 7 LPA", type: "Mass Recruiter", logo: "T", color: "#E83F94", deadline: "Feb 10", tags: ["Mass", "No Criteria"] },
+            { id: 4, company: "Jio", role: "Graduate Engineer Trainee", package: "₹5.5 LPA", type: "Full Time", logo: "J", color: "#0F3CC9", deadline: "Feb 12", tags: ["Core", "Extc"] },
+        ];
+
+        const jobGrid = document.getElementById('jobGrid');
+
+        // Render Jobs
+        jobs.forEach(job => {
+            const card = document.createElement('div');
+            card.className = 'job-card';
+            card.innerHTML = `
+                <div class="job-card-header">
+                    <div class="company-logo" style="background: ${job.color}">${job.logo}</div>
+                    <span class="job-package">${job.package}</span>
+                </div>
+                <h3 class="job-role">${job.role}</h3>
+                <div class="job-company">${job.company}</div>
+                <div class="job-tags">
+                    ${job.tags.map(tag => `<span class="job-tag">${tag}</span>`).join('')}
+                </div>
+                <div class="job-footer">
+                    <span class="job-deadline"><i data-lucide="clock" width="12"></i> ${job.deadline}</span>
+                    <button class="btn-job-apply">Apply</button>
+                </div>
+            `;
+            jobGrid.appendChild(card);
+        });
+
+        // Initialize Icons again for dynamic content
+        lucide.createIcons();
+    </script>
+</body>
+
+</html>

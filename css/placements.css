@@ -1,0 +1,406 @@
+/* ================================================================
+   PLACEMENTS PAGE STYLES
+   ================================================================ */
+
+/* ============= HERO SECTION ============= */
+.placement-hero {
+    background: linear-gradient(135deg, var(--card) 0%, rgba(220, 38, 38, 0.05) 100%);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-2xl);
+    padding: var(--space-2xl);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: var(--space-2xl);
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-content {
+    flex: 1;
+    z-index: 2;
+}
+
+.placement-stats {
+    display: flex;
+    gap: var(--space-2xl);
+    margin-top: var(--space-xl);
+}
+
+.p-stat-label {
+    font-size: var(--text-sm);
+    color: var(--text-muted);
+    margin-bottom: var(--space-2xs);
+}
+
+.p-stat-value {
+    font-size: var(--text-2xl);
+    font-weight: var(--font-black);
+    font-family: var(--font-mono);
+}
+
+.text-gradient {
+    background: linear-gradient(135deg, var(--primary) 0%, #FF8A80 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* Eligibility Card */
+.eligibility-card {
+    background: rgba(16, 185, 129, 0.1);
+    border: 1px solid var(--success);
+    border-radius: var(--radius-xl);
+    padding: var(--space-lg);
+    display: flex;
+    align-items: center;
+    gap: var(--space-md);
+    min-width: 300px;
+    backdrop-filter: blur(10px);
+}
+
+.eligibility-icon {
+    width: 48px;
+    height: 48px;
+    background: var(--success);
+    color: white;
+    border-radius: var(--radius-full);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3);
+}
+
+.eligibility-info h3 {
+    font-size: var(--text-lg);
+    font-weight: var(--font-bold);
+    color: var(--success);
+    margin-bottom: 2px;
+}
+
+.eligibility-info p {
+    font-size: var(--text-sm);
+    color: var(--text-secondary);
+}
+
+/* ============= JOB FILTERS ============= */
+.jobs-filter-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: var(--space-xl);
+    gap: var(--space-md);
+}
+
+.search-wrapper {
+    position: relative;
+    flex: 1;
+    max-width: 400px;
+}
+
+.search-wrapper i {
+    position: absolute;
+    left: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--text-muted);
+    width: 18px;
+    height: 18px;
+}
+
+.job-search-input {
+    width: 100%;
+    padding: 10px 10px 10px 40px;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    color: var(--text-primary);
+    transition: all 0.2s;
+}
+
+.job-search-input:focus {
+    outline: none;
+    border-color: var(--primary);
+}
+
+.filter-tabs {
+    display: flex;
+    background: var(--card);
+    padding: 4px;
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--border);
+}
+
+.filter-tab {
+    padding: 8px 16px;
+    border-radius: var(--radius-md);
+    font-size: var(--text-sm);
+    font-weight: var(--font-medium);
+    color: var(--text-muted);
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.filter-tab.active {
+    background: var(--primary);
+    color: white;
+}
+
+/* ============= JOB GRID ============= */
+.job-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: var(--space-lg);
+    margin-bottom: var(--space-2xl);
+}
+
+.job-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-xl);
+    padding: var(--space-xl);
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+.job-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-lg);
+    border-color: var(--primary);
+}
+
+.job-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: var(--space-md);
+}
+
+.company-logo {
+    width: 48px;
+    height: 48px;
+    border-radius: var(--radius-lg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: var(--text-xl);
+    font-weight: 900;
+    color: white;
+}
+
+.job-package {
+    background: rgba(220, 38, 38, 0.1);
+    color: var(--primary);
+    padding: 4px 8px;
+    border-radius: var(--radius-md);
+    font-size: var(--text-xs);
+    font-weight: var(--font-bold);
+    font-family: var(--font-mono);
+}
+
+.job-role {
+    font-size: var(--text-lg);
+    font-weight: var(--font-bold);
+    margin-bottom: var(--space-2xs);
+    color: var(--text-primary);
+}
+
+.job-company {
+    font-size: var(--text-sm);
+    color: var(--text-muted);
+    margin-bottom: var(--space-lg);
+}
+
+.job-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-xs);
+    margin-bottom: var(--space-xl);
+    flex: 1;
+}
+
+.job-tag {
+    font-size: 11px;
+    border: 1px solid var(--border);
+    padding: 4px 8px;
+    border-radius: var(--radius-full);
+    color: var(--text-secondary);
+}
+
+.job-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: auto;
+}
+
+.job-deadline {
+    font-size: var(--text-xs);
+    color: var(--text-muted);
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.btn-job-apply {
+    background: var(--text-primary);
+    color: var(--background);
+    border: none;
+    padding: 8px 16px;
+    border-radius: var(--radius-md);
+    font-size: var(--text-sm);
+    font-weight: 600;
+    cursor: pointer;
+    transition: opacity 0.2s;
+}
+
+.btn-job-apply:hover {
+    opacity: 0.9;
+}
+
+/* ============= KANBAN TRACKER ============= */
+.application-tracker {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-lg);
+    overflow-x: auto;
+    padding-bottom: var(--space-lg);
+}
+
+.tracker-col {
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-xl);
+    padding: var(--space-md);
+    min-width: 280px;
+}
+
+.tracker-header {
+    font-size: var(--text-sm);
+    font-weight: var(--font-semibold);
+    color: var(--text-secondary);
+    margin-bottom: var(--space-lg);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.tracker-header .count {
+    background: var(--border);
+    padding: 2px 8px;
+    border-radius: var(--radius-full);
+    font-size: 10px;
+}
+
+.tracker-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    padding: var(--space-md);
+    border-radius: var(--radius-lg);
+    margin-bottom: var(--space-md);
+    transition: transform 0.2s;
+}
+
+.tracker-card:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-sm);
+}
+
+.tc-company {
+    display: flex;
+    gap: var(--space-sm);
+    align-items: center;
+    margin-bottom: var(--space-md);
+}
+
+.tc-logo {
+    width: 32px;
+    height: 32px;
+    border-radius: var(--radius-md);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: bold;
+    font-size: 12px;
+}
+
+.tc-name {
+    font-size: var(--text-sm);
+    font-weight: var(--font-semibold);
+}
+
+.tc-role {
+    font-size: 11px;
+    color: var(--text-muted);
+}
+
+.tc-date {
+    font-size: 10px;
+    color: var(--text-muted);
+    text-align: right;
+}
+
+.tc-status {
+    font-size: 11px;
+    color: var(--primary);
+    font-weight: var(--font-medium);
+    margin-bottom: var(--space-sm);
+}
+
+.btn-sm {
+    width: 100%;
+    padding: 6px;
+    font-size: 11px;
+    background: var(--primary);
+    color: white;
+    border: none;
+    border-radius: var(--radius-md);
+    cursor: pointer;
+}
+
+.btn-outline {
+    background: transparent;
+    border: 1px solid var(--border);
+    color: var(--text-primary);
+}
+
+/* ============= RESPONSIVE ============= */
+@media (max-width: 1024px) {
+    .placement-hero {
+        flex-direction: column;
+        align-items: stretch;
+        gap: var(--space-xl);
+    }
+
+    .eligibility-card {
+        width: 100%;
+    }
+}
+
+@media (max-width: 768px) {
+    .jobs-filter-bar {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .application-tracker {
+        display: flex;
+        flex-direction: column;
+        gap: var(--space-md);
+    }
+
+    .tracker-col {
+        min-width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .placement-stats {
+        flex-direction: column;
+        gap: var(--space-md);
+    }
+}
